@@ -18,6 +18,13 @@
     "url": "https://github.com/brentwoodcock/sitelink-visualizer/issues"
   },
   "homepage": "https://github.com/brentwoodcock/sitelink-visualizer#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
