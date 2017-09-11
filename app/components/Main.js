@@ -7,10 +7,10 @@ class Main extends Component {
 	render() {
 		return (
 			<div className ='main-container'>
-				<nav className='navbar navbar-default navbar-fixed-top bg-primary'>
-					<div className='container text-center'>
+				<nav className='navbar navbar-inverse bg-primary'>
+					<span className='container text-center text-white'>
 						<h2>Sitelink API</h2>
-					</div>
+					</span>
 				</nav>
 				{this.props.children}
 			</div>

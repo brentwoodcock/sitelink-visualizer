@@ -4,23 +4,60 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			deafult: ''
-		}
+			location: '',
+			searchType: ''
+		};
+		this.handleLocChange = this.handleLocChange.bind(this);
+		this.handleSearchChange = this.handleSearchChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	handleLocChange(e) {
+		this.setState({ location: e.target.value });
+	}
+	handleSearchChange(e) {
+		this.setState({ searchType: e.target.value });
+	}
+	handleSubmit(e) {
+		e.preventDefault();
+		console.log(this.state);
+		console.log('Submitted');
 	}
 	render() {
 		return (
-			<form className='form-inline'>
-				<select className='form-control' id='locSelect'>
-					<option selected>Choose Location</option>
-					<option value='1'>Location 1</option>
-					<option value='2'>Location 2</option>
-					<option value='3'>Location 3</option>
-					<option value='4'>Location 4</option>
-					<option value='5'>Location 5</option>
-				</select>
+			<div className='card mt-4'>
+				<div className ='card-header'>
+					Search
+				</div>
+				<div className='card-body'>
+					<form className='form-inline mt-2 mb-2' data-toggle='validator'>
+						<div className='form-group'>
+							<select required className='form-control ml-2 mr-2' id='locSelect' onChange={this.handleLocChange}>
+								<option disabled selected hidden>Choose Location</option>
+								<option value='l003'>Ashely's</option>
+								<option value='l004'>Ashley's Boat</option>
+								<option value='l007'>Caney</option>
+								<option value='l008'>Franz</option>
+								<option value='l006'>Katy</option>
+								<option value='l002'>Living</option>
+								<option value='l005'>Naco</option>
+							</select>
+						</div>
 
-				<button type='submit' className='btn btn-success'>Submit</button>
-			</form>
+						<div className='form-check form-check-inline'>
+							<label className='form-check-label'>
+								<input required className='form-check-input' type='radio' name='searchTypeOptions' id='unitTypeInfo' value='unitType' checked={this.state.searchType === 'unitType'} onChange={this.handleSearchChange} /> Unit Types
+							</label>
+						</div>
+						<div className='form-check form-check-inline'>
+							<label className='form-check-label'>
+								<input required className='form-check-input' type='radio' name='searchTypeOptions' id='allUnitInfo' value='allUnits' checked={this.state.searchType === 'allUnits'} onChange={this.handleSearchChange} /> All Units
+							</label>
+						</div>
+
+						<button type='submit' className='btn btn-success' onClick={this.handleSubmit}>Submit</button>
+					</form>
+				</div>
+			</div>
 		)
 	}
 } 
