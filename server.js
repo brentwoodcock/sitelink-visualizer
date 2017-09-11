@@ -20,21 +20,15 @@ app.get('/', function(req, res) {
 	res.send('./dist/index.html');
 });
 
-app.get('/api/unit', function(req, res) {
-	console.log(req);
-	console.log(res);
-	sitelinkService.getUnitInformation('l007').then(function (result) {
+app.get('/units/:locCode', function(req, res) {
+	sitelinkService.getUnitInformation(req.params.locCode).then(function (result) {
 		res.json(result.UnitsInformation_v2Result.diffgram.NewDataSet.Table);
-		console.log(result.UnitsInformation_v2Result.diffgram.NewDataSet.Table.length);
 	});
 });
 
-app.get('/api/type', function(req, res) {
-	console.log(req);
-	console.log(res);
-	sitelinkService.getTypeInformation('l007').then(function (result) {
+app.get('/types/:locCode', function(req, res) {
+	sitelinkService.getTypeInformation(req.params.locCode).then(function (result) {
 		res.json(result.UnitTypePriceList_v2Result.diffgram.NewDataSet.Table);
-		console.log(result.UnitTypePriceList_v2Result.diffgram.NewDataSet.Table.length);
 	});
 });
 
