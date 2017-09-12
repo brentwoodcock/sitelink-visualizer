@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FormContainer from '../containers/FormContainer';
-// import ResultsContainer from '../containters/ResultsContainer';
+import ResultsContainer from '../containers/ResultsContainer';
 
 class Wrapper extends Component {
 	constructor(props) {
@@ -9,14 +9,14 @@ class Wrapper extends Component {
 		this.state = {
 			location: '',
 			searchType: '',
-			data: ''
+			data: []
 		}
 		this.setSearchTerms = this.setSearchTerms.bind(this);
 	}
 	// Runs when component's state changes (i.e. search terms are set)
 	componentDidUpdate(prevProps, prevState) {
-		// Checks with previous search terms to only query API if terms are different
-		if (prevState.location != this.state.location && prevState.searchType != this.state.searchType) {
+		// Checks with previous search terms to only query API if terms are different (prevents infinite queries)
+		if (prevState.location !== this.state.location || prevState.searchType !== this.state.searchType) {
 			if (this.state.searchType === 'unitTypes') {
 				console.log('Requesting /types/' + this.state.location);
 				axios.get('/types/' + this.state.location).then(response => {
@@ -56,7 +56,9 @@ class Wrapper extends Component {
 				</div>
 				<div className='row'>
 					<div className='col-sm-12'>
-						ResultsContainer
+						<ResultsContainer
+						data={this.state.data}
+						searchType={this.state.searchType} />
 					</div>
 				</div>
 			</div>

@@ -6,7 +6,7 @@ class FormContainer extends Component {
 		super(props);
 		this.state = {
 			location: '',
-			searchType: ''
+			searchType: 'unitTypes'
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleLocChange = this.handleLocChange.bind(this);
@@ -14,9 +14,11 @@ class FormContainer extends Component {
 	}
 	handleLocChange(e) {
 		this.setState({ location: e.target.value });
+		// console.log('FormContainer location ' + this.state.location);
 	}
 	handleSearchChange(e) {
-		this.setState({ searchType: e.target.value });
+		this.setState({ searchType: e });
+		// console.log('FormContainer searchType ' + this.state.searchType);
 	}
 	handleSubmit(e) {
 		e.preventDefault();
@@ -25,9 +27,9 @@ class FormContainer extends Component {
 	render() {
 		return (
 			<Form 
-			handleLocChange={this.handleLocChange}
-			handleSearchChange={this.handleSearchChange}
-			handleSubmit={this.handleSubmit} 
+			onLocChange={this.handleLocChange}
+			onSearchChange={this.handleSearchChange}
+			onSubmit={this.handleSubmit} 
 			location={this.state.location}
 			searchType={this.state.searchType} />
 		)
