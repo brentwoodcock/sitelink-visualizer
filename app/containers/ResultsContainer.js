@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Results from '../components/Results';
+import matchSorter from 'match-sorter';
 
 class ResultsContainer extends Component {
 	constructor(props) {
@@ -20,36 +21,66 @@ class ResultsContainer extends Component {
 		if (this.props.searchType === 'unitTypes') {
 			this.state.columns =[{
 				Header: 'Unit Type',
-				accessor: 'sTypeName'
+				accessor: 'sTypeName',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['sTypeName'] }),
+				filterAll: true
 			}, {
 				Header: 'Unit Type ID',
-				accessor: 'UnitTypeID'
+				accessor: 'UnitTypeID',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['UnitTypeID'] }),
+				filterAll: true
 			}, {
 				Header: 'Standard Rate',
-				accessor: 'dcStdRate'
+				accessor: 'dcStdRate',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['dcStdRate'] }),
+				filterAll: true
 			}, {
 				Header: 'Occupied Units',
-				accessor: 'iTotalOccupied'
+				accessor: 'iTotalOccupied',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['iTotalOccupied'] }),
+				filterAll: true
 			}, {
 				Header: 'Vacant Units',
-				accessor: 'iTotalVacant'
+				accessor: 'iTotalVacant',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['iTotalVacant'] }),
+				filterAll: true
 			}, {
 				Header: 'Total Units',
-				accessor: 'iTotalUnits'
+				accessor: 'iTotalUnits',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['iTotalUnits'] }),
+				filterAll: true
 			}]
 		} else if (this.props.searchType === 'allUnits') {
 			this.state.columns = [{
 				Header: 'Unit Name',
-				accessor: 'sUnitName'
+				accessor: 'sUnitName',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['sUnitName'] }),
+				filterAll: true
 			}, {
 				Header: 'Unit Type',
-				accessor: 'sTypeName'
+				accessor: 'sTypeName',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['sTypeName'] }),
+				filterAll: true
 			}, {
 				Header: 'Unit Type ID',
-				accessor: 'UnitTypeID'
+				accessor: 'UnitTypeID',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['UnitTypeID'] }),
+				filterAll: true
 			}, {
 				Header: 'Standard Rate',
-				accessor: 'dcStdRate'
+				accessor: 'dcStdRate',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['dcStdRate'] }),
+				filterAll: true
 			}]
 		}
 	}

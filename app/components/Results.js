@@ -14,6 +14,7 @@ class Results extends Component {
 				columns={this.props.columns}
 				defaultPageSize={10}
 				className='-striped'
+				filterable
 				SubComponent={row => {
 					console.log(row.row._original);
 					var subComponentData = [];
@@ -41,6 +42,12 @@ class Results extends Component {
 								columns={subComponentColumns}
 								className='-striped'
 								showPagination={false}
+								defaultSorted={[
+									{
+										id: 'variable',
+										desc: true
+									}
+								]}
 								pageSize={subComponentData.length}
 							/>
 						</div>
