@@ -18,7 +18,7 @@ class Results extends Component {
 					console.log(row.row._original);
 					var subComponentData = [];
 					for (var key in row.row._original) {
-						if (row.row._original.hasOwnProperty(key) && (key !== '$attributes')) {
+						if (row.row._original.hasOwnProperty(key) && (key !== '$attributes') && (key !== 'Ret_Code')) {
 							subComponentData.push({
 								variable: key,
 								value: row.row._original[key]
