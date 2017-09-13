@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "sitelinkservice@git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+        "scope": null,
+        "escapedName": "sitelinkservice",
+        "name": "sitelinkservice",
+        "rawSpec": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+        "spec": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "bitbucket",
+          "ssh": "git@bitbucket.org:codewhale/sitelink-service.git",
+          "sshUrl": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+          "httpsUrl": "git+https://bitbucket.org/codewhale/sitelink-service.git",
+          "shortcut": "bitbucket:codewhale/sitelink-service",
+          "directUrl": "https://bitbucket.org/codewhale/sitelink-service/raw/master/package.json"
+        }
+      },
+      "G:\\Users\\Brent\\Desktop\\CBD\\sitelink-visualizer"
+    ]
+  ],
+  "_from": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+  "_id": "sitelinkservice@1.0.0",
+  "_inCache": true,
+  "_location": "/sitelinkservice",
+  "_phantomChildren": {
+    "ms": "2.0.0"
+  },
+  "_requested": {
+    "raw": "sitelinkservice@git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+    "scope": null,
+    "escapedName": "sitelinkservice",
+    "name": "sitelinkservice",
+    "rawSpec": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+    "spec": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "bitbucket",
+      "ssh": "git@bitbucket.org:codewhale/sitelink-service.git",
+      "sshUrl": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+      "httpsUrl": "git+https://bitbucket.org/codewhale/sitelink-service.git",
+      "shortcut": "bitbucket:codewhale/sitelink-service",
+      "directUrl": "https://bitbucket.org/codewhale/sitelink-service/raw/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git#e2578856fe6459753381a731dc67e8c4f0d543dd",
+  "_shasum": "0912072246811b45f16b9c7d774864502c690fef",
+  "_shrinkwrap": null,
+  "_spec": "sitelinkservice@git+ssh://git@bitbucket.org/codewhale/sitelink-service.git",
+  "_where": "G:\\Users\\Brent\\Desktop\\CBD\\sitelink-visualizer",
+  "author": {
+    "name": "Eric Ruiz"
+  },
+  "dependencies": {
+    "debug": "^3.0.1",
+    "strong-soap": "^1.2.6"
+  },
+  "devDependencies": {},
+  "gitHead": "e2578856fe6459753381a731dc67e8c4f0d543dd",
+  "homepage": "https://bitbucket.org/codewhale/sitelink-service#readme",
+  "license": "ISC",
+  "main": "server.js",
+  "name": "sitelinkservice",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://ericruiz@bitbucket.org/codewhale/sitelink-service.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

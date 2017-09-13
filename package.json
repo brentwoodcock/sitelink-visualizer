@@ -32,7 +32,7 @@
     "react-radio-buttons": "^1.1.1",
     "react-router": "^3.0.0",
     "react-table": "^6.5.3",
-    "sitelinkservice": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git"
+    // "sitelinkservice": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

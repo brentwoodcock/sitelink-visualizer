@@ -1,7 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var sitelinkService = require('sitelinkservice/dist/SitelinkService');
+// var sitelinkService = require('sitelinkservice/dist/SitelinkService');
+
+// Temporary location of sitelinkService for Heroku
+var sitelinkService = require('../sitelinkservice/dist/SitelinkService');
 
 var app = express();
 var PORT = process.env.PORT || 8080;
