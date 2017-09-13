@@ -3,12 +3,6 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var sitelinkService = require('sitelinkservice/dist/SitelinkService');
 
-// package.json dependency
-// "sitelinkservice": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git"
-
-// Temporary location of sitelinkService for Heroku
-// var sitelinkService = require('./sitelinkservice/dist/SitelinkService');
-
 var app = express();
 var PORT = process.env.PORT || 8080;
 

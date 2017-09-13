@@ -1,7 +1,7 @@
 {
   "name": "sitelink-visualizer",
   "version": "1.0.0",
-  "engines": {
+  "engine": {
     "node": "7.10.1",
     "npm": "4.2.0"
   },
