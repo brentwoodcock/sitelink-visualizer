@@ -6,19 +6,44 @@ class Results extends Component {
 	constructor(props) {
 		super(props);
 	}
+
 	render() {
 		return (
 			<ReactTable
 				data={this.props.data}
 				columns={this.props.columns}
-				defaultPageSize={20}
-				style={{
-					height: '600px' // This will force the table body to overflow and scroll
-				}}
+				defaultPageSize={10}
 				className='-striped'
 				SubComponent={row => {
+					console.log(row.row._original);
+					var subComponentData = [];
+					for (var key in row.row._original) {
+						if (row.row._original.hasOwnProperty(key) && (key !== '$attributes')) {
+							subComponentData.push({
+								variable: key,
+								value: row.row._original[key]
+							});
+						}
+					};
+
+					var subComponentColumns = [{
+						Header: 'Variable',
+						accessor: 'variable'
+					}, {
+						Header: 'Value',
+						accessor: 'value'
+					}];
+
 					return (
-						<p>All of the data</p>
+						<div style={{ padding:'20px' }}>
+							<ReactTable
+								data={subComponentData}
+								columns={subComponentColumns}
+								className='-striped'
+								showPagination={false}
+								pageSize={subComponentData.length}
+							/>
+						</div>
 						);
 				}}
 			/>

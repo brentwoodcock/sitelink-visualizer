@@ -1,27 +1,6 @@
 import React, { Component } from 'react';
 import { RadioGroup, RadioButton } from 'react-radio-buttons';
 
-//					<div className='form-check form-check-inline'>
-//						<label className='form-check-label'>
-//							<input required 
-//							className='form-check-input' 
-//							type='radio' 
-//							name='searchTypeOptions'
-//							value='unitTypes'
-//							checked={this.} 
-//							onChange={this.props.onSearchChange} /> Unit Types
-//						</label>
-//					</div>
-//					<div className='form-check form-check-inline'>
-//						<label className='form-check-label'>
-//							<input required 
-//							className='form-check-input' 
-//							type='radio' 
-//							name='searchTypeOptions' 
-//							value='allUnits' 
-//							onChange={this.props.onSearchChange} /> All Units
-//						</label>
-//					</div>
 
 class Form extends Component {
 	constructor(props) {

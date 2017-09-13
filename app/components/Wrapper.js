@@ -19,7 +19,7 @@ class Wrapper extends Component {
 		if (prevState.location !== this.state.location || prevState.searchType !== this.state.searchType) {
 			if (this.state.searchType === 'unitTypes') {
 				console.log('Requesting /types/' + this.state.location);
-				axios.get('/types/' + this.state.location).then(response => {
+				axios.get('/api/types/' + this.state.location).then(response => {
 					this.setState({ data: response.data });
 					console.log(this.state.data);
 				}).catch(error => {
@@ -27,7 +27,7 @@ class Wrapper extends Component {
 				});
 			} else if (this.state.searchType === 'allUnits') {
 				console.log('Requesting /units/' + this.state.location);
-				axios.get('/units/' + this.state.location).then(response => {
+				axios.get('/api/units/' + this.state.location).then(response => {
 					this.setState ({ data: response.data });
 					console.log(this.state.data);
 				}).catch(error => {
@@ -41,7 +41,6 @@ class Wrapper extends Component {
 			location: location,
 			searchType: searchType
 		});
-		console.log('Wrapper search terms ' + this.state.location + this.state.searchType);
 	}
 	render() {
 		return (

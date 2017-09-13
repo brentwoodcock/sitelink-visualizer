@@ -20,13 +20,13 @@ app.get('/', function(req, res) {
 	res.send('./dist/index.html');
 });
 
-app.get('/units/:locCode', function(req, res) {
+app.get('/api/units/:locCode', function(req, res) {
 	sitelinkService.getUnitInformation(req.params.locCode).then(function (result) {
 		res.json(result.UnitsInformation_v2Result.diffgram.NewDataSet.Table);
 	});
 });
 
-app.get('/types/:locCode', function(req, res) {
+app.get('/api/types/:locCode', function(req, res) {
 	sitelinkService.getTypeInformation(req.params.locCode).then(function (result) {
 		res.json(result.UnitTypePriceList_v2Result.diffgram.NewDataSet.Table);
 	});
