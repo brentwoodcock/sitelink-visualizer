@@ -1,4 +1,4 @@
-const soap = require('../node_modules/strong-soap/index').soap;
+const soap = require('../node_modules/strong-soap/index.js').soap;
 
 const sitelinkServiceDebug = require('debug')('sitelink-service');
 
