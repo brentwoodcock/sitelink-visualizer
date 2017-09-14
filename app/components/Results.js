@@ -42,6 +42,9 @@ class Results extends Component {
 								columns={subComponentColumns}
 								className='-striped'
 								showPagination={false}
+								style={{
+									height: '350px'  // Forces table to overflow and scroll
+								}}
 								defaultSorted={[
 									{
 										id: 'variable',
