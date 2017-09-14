@@ -36,7 +36,7 @@ class Results extends Component {
 					}];
 
 					return (
-						<div style={{ padding:'20px' }}>
+						<div style={{ 'padding':'20px', 'margin-left': '50px', 'margin-right': '50px' }}>
 							<ReactTable
 								data={subComponentData}
 								columns={subComponentColumns}
@@ -45,7 +45,7 @@ class Results extends Component {
 								defaultSorted={[
 									{
 										id: 'variable',
-										desc: true
+										asc: true
 									}
 								]}
 								pageSize={subComponentData.length}
