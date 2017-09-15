@@ -9,9 +9,11 @@ class Wrapper extends Component {
 		this.state = {
 			location: '',
 			searchType: '',
-			data: []
+			data: [],
+			convertedData: []
 		}
 		this.setSearchTerms = this.setSearchTerms.bind(this);
+		this.convertData = this.convertData.bind(this);
 	}
 	// Runs when component's state changes (i.e. search terms are set)
 	componentDidUpdate(prevProps, prevState) {
@@ -21,15 +23,15 @@ class Wrapper extends Component {
 				console.log('Requesting /types/' + this.state.location);
 				axios.get('/api/types/' + this.state.location).then(response => {
 					this.setState({ data: response.data });
-					console.log(this.state.data);
+					this.convertData();
 				}).catch(error => {
 					console.log(error);
 				});
 			} else if (this.state.searchType === 'allUnits') {
 				console.log('Requesting /units/' + this.state.location);
 				axios.get('/api/units/' + this.state.location).then(response => {
-					this.setState ({ data: response.data });
-					console.log(this.state.data);
+					this.setState({ data: response.data });
+					this.convertData();
 				}).catch(error => {
 					console.log(error);
 				});
@@ -41,6 +43,31 @@ class Wrapper extends Component {
 			location: location,
 			searchType: searchType
 		});
+	}
+	// Convert incoming number strings to integers and floats for accurate sorting of table columns
+	convertData() {
+		var data = this.state.data;
+		console.log('initial data');
+		console.log(data);
+		var convertedData = [];
+		for (var i = data.length - 1; i >= 0; i--) {
+			for (var key in data[i]) {
+				if (data[i].hasOwnProperty(key) && key !== '$attributes') {
+					var x = data[i][key];
+					x = +x;
+					// Only replace data values converted to integers or floats
+					if (isNaN(x)) {
+						// Do nothing
+					} else {
+						data[i][key] = x;
+					}
+				}
+			}
+			convertedData.push(data[i]);
+		}
+		this.setState({ convertedData: convertedData });
+		console.log('convertedData');
+		console.log(this.state.convertedData);
 	}
 	render() {
 		return (
@@ -56,7 +83,7 @@ class Wrapper extends Component {
 				<div className='row'>
 					<div className='col-sm-12'>
 						<ResultsContainer
-						data={this.state.data}
+						data={this.state.convertedData}
 						searchType={this.state.searchType} />
 					</div>
 				</div>

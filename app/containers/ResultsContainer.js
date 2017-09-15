@@ -13,7 +13,6 @@ class ResultsContainer extends Component {
 		this.createSubComponents = this.createSubComponents.bind(this);
 	}
 	componentDidUpdate(prevProps, prevState) {
-		console.log('ResultsContainer did update');
 		this.createColumns();
 		this.createSubComponents();
 	}
@@ -109,8 +108,6 @@ class ResultsContainer extends Component {
 				this.state.subComponents.push(component);
 			}
 		}
-		console.log('subComponents array');
-		console.log(this.state.subComponents);
 	}
 	render() {
 		return (
