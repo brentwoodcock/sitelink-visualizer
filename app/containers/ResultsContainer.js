@@ -26,8 +26,9 @@ class ResultsContainer extends Component {
 					matchSorter(rows, filter.value, { keys: ['sTypeName'] }),
 				filterAll: true
 			}, {
-				Header: 'Unit Type ID',
+				Header: 'Type ID',
 				accessor: 'UnitTypeID',
+				maxWidth: 75,
 				filterMethod: (filter, rows) =>
 					matchSorter(rows, filter.value, { keys: ['UnitTypeID'] }),
 				filterAll: true
@@ -38,10 +39,16 @@ class ResultsContainer extends Component {
 					matchSorter(rows, filter.value, { keys: ['dcStdRate'] }),
 				filterAll: true
 			}, {
-				Header: 'Occupied Units',
-				accessor: 'iTotalOccupied',
+				Header: 'Length',
+				accessor: 'dcLength',
 				filterMethod: (filter, rows) =>
-					matchSorter(rows, filter.value, { keys: ['iTotalOccupied'] }),
+					matchSorter(rows, filter.value, { keys: ['dcLength'] }),
+				filterAll: true
+			}, {
+				Header: 'Width',
+				accessor: 'dcWidth',
+				filterMethod: (filter, rows) =>
+					matchSorter(rows, filter.value, { keys: ['dcWidth'] }),
 				filterAll: true
 			}, {
 				Header: 'Vacant Units',

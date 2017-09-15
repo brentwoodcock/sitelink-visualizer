@@ -19,13 +19,13 @@ class Form extends Component {
 							<div className='col-9'>
 								<select required className='form-control' id='locSelect' onChange={this.props.onLocChange}>
 									<option disabled selected hidden>Choose Location</option>
-									<option value='l003'>Ashely's</option>
-									<option value='l004'>Ashley's Boat</option>
-									<option value='l007'>Caney</option>
-									<option value='l008'>Franz</option>
-									<option value='l006'>Katy</option>
-									<option value='l002'>Living</option>
-									<option value='l005'>Naco</option>
+									<option value='l003'>Ashely's Self Storage</option>
+									<option value='l004'>Ashley's Boat & RV</option>
+									<option value='l007'>Caney Creek Self Storage</option>
+									<option value='l008'>Franz Road Storage</option>
+									<option value='l006'>Katy Kingsland Self Storage</option>
+									<option value='l002'>Livingston Security Storage</option>
+									<option value='l005'>Nacogdoches Self Storage</option>
 								</select>
 							</div>
 						</div>
