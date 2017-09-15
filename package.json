@@ -1,9 +1,8 @@
 {
   "name": "sitelink-visualizer",
   "version": "1.0.0",
-  "engine": {
-    "node": "7.10.1",
-    "npm": "4.2.0"
+  "engines": {
+    "node": "7.10.1"
   },
   "description": "Data visualization for Sitelink API",
   "main": "index.js",
@@ -33,7 +32,7 @@
     "react-radio-buttons": "^1.1.1",
     "react-router": "^3.0.0",
     "react-table": "^6.5.3",
-    "sitelinkservice": "git+ssh://git@bitbucket.org/codewhale/sitelink-service.git"
+    "sitelinkservice": "git+https://git@github.com/brentwoodcock/sitelink-service.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
