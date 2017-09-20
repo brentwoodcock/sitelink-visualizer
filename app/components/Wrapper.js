@@ -66,8 +66,8 @@ class Wrapper extends Component {
 			convertedData.push(data[i]);
 		}
 		this.setState({ convertedData: convertedData });
-		console.log('convertedData');
-		console.log(this.state.convertedData);
+		// console.log('convertedData');
+		// console.log(this.state.convertedData);
 	}
 	render() {
 		return (

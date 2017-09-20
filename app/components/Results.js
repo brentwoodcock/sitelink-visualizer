@@ -15,7 +15,6 @@ class Results extends Component {
 				className='-striped'
 				filterable
 				SubComponent={row => {
-					console.log(row.row._original);
 					var subComponentData = [];
 					for (var key in row.row._original) {
 						if (row.row._original.hasOwnProperty(key) && (key !== '$attributes') && (key !== 'Ret_Code')) {
